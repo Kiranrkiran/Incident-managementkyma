@@ -2,10 +2,13 @@
   "name": "incident-management-cds",
   "version": "1.0.0",
   "devDependencies": {
+    "@cap-js/sqlite": "^3",
     "@sap/cds-dk": "^10.2.0"
+  },
+  "scripts": {
+    "cds-build": "npm install --include=dev && cds build --production"
   },
   "sapux": [
     "app/incidents"
-  ],
-  "dependencies": {}
+  ]
 }
