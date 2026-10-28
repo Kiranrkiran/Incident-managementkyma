@@ -1,0 +1,23 @@
+general:
+  buildTool: "maven"
+
+stages:
+  Build:
+    mavenBuild: true
+    npmExecuteScripts: true
+    cnbBuild: true
+
+steps:
+  mavenBuild:
+    goals:
+      - "clean"
+      - "package"
+    flags:
+      - "-DskipTests=true"
+      - "--batch-mode"
+
+  cnbBuild:
+    path: "srv/target/incident-management-exec.jar"
+    buildEnvVars:
+      - "SPRING_PROFILES_ACTIVE=cloud"
+      - "BP_JVM_VERSION=25"
