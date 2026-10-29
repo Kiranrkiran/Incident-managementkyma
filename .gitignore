@@ -1,4 +1,7 @@
 **/gen/
+!/gen/
+gen/*
+!gen/chart
 **/edmx/
 *.db
 *.sqlite
