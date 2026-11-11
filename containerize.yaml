@@ -2,7 +2,10 @@ _schema-version: '1.0'
 repository: docker.io/kiranryadav
 tag: v6
 before-all:
+  - npx cds build --production
   - mvn clean package -DskipTests=true --batch-mode
+  - helm dependency update ./gen/chart
+  - helm dependency build ./gen/chart
 modules:
   - name: incident-management-srv
     build-parameters:
