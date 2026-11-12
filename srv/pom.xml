@@ -139,6 +139,19 @@
 							</commands>
 						</configuration>
 					</execution>
+					<!-- Add this new execution -->
+					<execution>
+						<id>cds.build.production</id>
+						<goals>
+							<goal>cds</goal>
+						</goals>
+						<configuration>
+							<commands>
+								<command>build --production</command>
+							</commands>
+						</configuration>
+					</execution>
+
 
 					<execution>
 						<id>cds.generate</id>
